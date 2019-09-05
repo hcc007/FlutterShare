@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_share/refreshData/refresh_data.dart';
 
+import 'nestedScrollView/DemoOne.dart';
+import 'nestedScrollView/DemoTwo.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -62,9 +65,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("NestedScrollViewDemo"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new NestedScrollViewDemoOne();
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
+
+            },
+
+          ),
 
 
-      ]
+
+
+
+
+
+
+        ]
     )
     );
   }

@@ -173,8 +173,6 @@ class _RefreshDataPageState extends State<RefreshDataPage> {
                     }
                 );
 
-
-
               }else{
                 return Center(
                   child: Text("error"),
