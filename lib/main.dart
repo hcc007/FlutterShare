@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_share/refreshData/refresh_data.dart';
+import 'package:flutter_share/stateManager/models/cart.dart';
+import 'package:flutter_share/stateManager/models/catalog.dart';
+import 'package:flutter_share/stateManager/screens/cart.dart';
+import 'package:flutter_share/stateManager/screens/catalog.dart';
+import 'package:provider/provider.dart';
 
 import 'nestedScrollView/DemoOne.dart';
 import 'nestedScrollView/DemoTwo.dart';
@@ -9,13 +14,48 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+
+
+ /*   return MaterialApp(
       title: 'Flutter Study',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
+*/
+    ///MultiProvider 可以提供多个 model
+    return MultiProvider(
+      providers: [
+        ///不变的数据类型，使用 model 就足够了
+        Provider(builder: (context) => CatalogModel()),
+
+        // CartModel is implemented as a ChangeNotifier, which calls for the use
+        // of ChangeNotifierProvider. Moreover, CartModel depends
+        // on CatalogModel, so a ProxyProvider is needed.
+        ChangeNotifierProxyProvider<CatalogModel, CartModel>(
+            builder: (context, catalog, previousCart) =>
+                CartModel(catalog, previousCart)),
+      ],
+
+      child: MaterialApp(
+        title: 'Provider Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/catalog': (context) => MyCatalog(),    ///类别
+          '/cart': (context) => MyCart(),
+        },
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
+    );
+
+
+
+
+
   }
 }
 
@@ -86,7 +126,22 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
 
 
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("全局状态管理"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
 
+              Navigator.pushNamed(context, "/catalog");
+
+
+
+            },
+
+          ),
 
 
 
