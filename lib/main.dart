@@ -6,6 +6,9 @@ import 'package:flutter_share/stateManager/screens/cart.dart';
 import 'package:flutter_share/stateManager/screens/catalog.dart';
 import 'package:provider/provider.dart';
 
+import 'animatedIcon/AnimatedIconPage.dart';
+import 'animatedSwitcher/AnimatedSwitcherCounterRoute.dart';
+import 'flutterSearch/searchbarview.dart';
 import 'nestedScrollView/DemoOne.dart';
 import 'nestedScrollView/DemoTwo.dart';
 
@@ -138,6 +141,73 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.pushNamed(context, "/catalog");
 
 
+
+            },
+
+          ),
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Flutter 搜索页面"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new SearchBarView();
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
+
+            },
+
+          ),
+
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Flutter AnimatedIcon "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new AnimatedIconPage();
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
+
+            },
+
+          ),
+
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Flutter AnimatedSwitcher Demo "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: AnimatedSwitcherCounterRoute(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
 
             },
 
