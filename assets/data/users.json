@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "first_name": "Douglas",
+      "last_name": "Tober",
+      "website": "Codetober.com"
+    },
+    {
+      "first_name": "Brad",
+      "last_name": "Traversy",
+      "website": "traversymedia.com"
+    },
+    {
+      "first_name": "Bucky",
+      "last_name": "Roberts",
+      "website": "lhventures.us"
+    },
+    {
+      "first_name": "Doug",
+      "last_name": "Tober",
+      "website": "j5technology.com"
+    }
+  ]
+}

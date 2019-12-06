@@ -51,6 +51,8 @@ flutter:
 
   assets:
     - images/bg.jpg
+    - assets/data/users.json
+
 
 
   # To add assets to your application, add an assets section, like this:
