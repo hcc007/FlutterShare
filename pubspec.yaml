@@ -30,6 +30,9 @@ dependencies:
   #provider 全局状态管理
   provider: ^3.1.0
 
+  #图形图表绘制
+  charts_flutter: ^0.9.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,6 +55,7 @@ flutter:
   assets:
     - images/bg.jpg
     - assets/data/users.json
+    - images/
 
 
 
