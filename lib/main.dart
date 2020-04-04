@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 
 import 'animatedIcon/AnimatedIconPage.dart';
 import 'animatedSwitcher/AnimatedSwitcherCounterRoute.dart';
+import 'autocomplete/OverlayMain.dart';
 import 'chartsDisplay/ChartDispalyMain.dart';
 import 'flutterSearch/searchbarview.dart';
 import 'nestedScrollView/DemoOne.dart';
@@ -228,6 +229,28 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push( context,
                   new MaterialPageRoute(builder: (context) {
                     return new Scaffold(body: ChartDispalyMain(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+
+            },
+
+          ),
+
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("全局弹窗(输入补全)"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: OverlayMain(),);
                     //return new NestedScrollViewDemoTwo();
                   }));
 
