@@ -11,3 +11,5 @@
 [6、Flutter  图表绘制](https://juejin.im/post/5e7eafc26fb9a03c53517244)
 
 [7、Flutter 使用 Overlay 实现全局弹窗](https://juejin.im/post/5e87f43051882573cd41a342)
+
+[8、Flutter 3D 动画](https://juejin.im/post/5e90739ee51d4546fd48169a)
