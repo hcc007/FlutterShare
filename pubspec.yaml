@@ -33,6 +33,8 @@ dependencies:
   #图形图表绘制
   charts_flutter: ^0.9.0
 
+  async: ^2.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -8,6 +8,7 @@ import 'package:flutter_share/stateManager/screens/cart.dart';
 import 'package:flutter_share/stateManager/screens/catalog.dart';
 import 'package:provider/provider.dart';
 
+import 'FutureBuilderProblem/FutureBuilderMain.dart';
 import 'animatedIcon/AnimatedIconPage.dart';
 import 'animatedSwitcher/AnimatedSwitcherCounterRoute.dart';
 import 'autocomplete/OverlayMain.dart';
@@ -303,6 +304,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
 
 
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("FutureBuilderDemo"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: FutureBuilderMain(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+            },
+          ),
 
         ]
     )
