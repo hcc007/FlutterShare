@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_share/path/PathBasicsMain.dart';
 import 'package:flutter_share/perspective/FlipAnimationMain.dart';
 import 'package:flutter_share/perspective/PerspectiveMain.dart';
 import 'package:flutter_share/refreshData/refresh_data.dart';
@@ -321,6 +322,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
             },
           ),
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Path 基础"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: PathBasicsMain(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+            },
+          ),
+
 
         ]
     )
