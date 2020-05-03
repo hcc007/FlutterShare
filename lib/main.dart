@@ -14,6 +14,7 @@ import 'animatedIcon/AnimatedIconPage.dart';
 import 'animatedSwitcher/AnimatedSwitcherCounterRoute.dart';
 import 'autocomplete/OverlayMain.dart';
 import 'chartsDisplay/ChartDispalyMain.dart';
+import 'downloadDemo/DownDemoMain.dart';
 import 'flutterSearch/searchbarview.dart';
 import 'nestedScrollView/DemoOne.dart';
 import 'nestedScrollView/DemoTwo.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProxyProvider<CatalogModel, CartModel>(
             builder: (context, catalog, previousCart) =>
                 CartModel(catalog, previousCart)),
+
       ],
 
       child: MaterialApp(
@@ -340,6 +342,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
             },
           ),
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("下载文件"),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: DownDemoMain(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+            },
+          ),
+
 
 
         ]
