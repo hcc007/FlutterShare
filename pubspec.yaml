@@ -25,7 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   #网络请求
-  dio: ^2.1.16
+  dio: ^3.0.9
 
   #provider 全局状态管理
   provider: ^3.0.1
@@ -37,7 +37,7 @@ dependencies:
   async: ^2.3.0
 
   #文件路径管理
-  path_provider: ^1.0.1
+  path_provider: ^1.6.9
 
   #权限检查
   simple_permissions: ^0.1.9
