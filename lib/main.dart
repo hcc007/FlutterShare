@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_share/path/Circles.dart';
 import 'package:flutter_share/path/PathAdvancedMain.dart';
 import 'package:flutter_share/path/PathBasicsMain.dart';
 import 'package:flutter_share/perspective/FlipAnimationMain.dart';
@@ -18,8 +17,9 @@ import 'autocomplete/OverlayMain.dart';
 import 'chartsDisplay/ChartDispalyMain.dart';
 import 'downloadDemo/DownDemoMain.dart';
 import 'flutterSearch/searchbarview.dart';
+import 'navigationrail/NavigationRailMain.dart';
 import 'nestedScrollView/DemoOne.dart';
-import 'nestedScrollView/DemoTwo.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -383,6 +383,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
             },
           ),
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("NavigationRail "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: NanigationRailMain(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+            },
+          ),
+
 
 
 
