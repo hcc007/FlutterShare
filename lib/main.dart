@@ -17,6 +17,8 @@ import 'autocomplete/OverlayMain.dart';
 import 'chartsDisplay/ChartDispalyMain.dart';
 import 'downloadDemo/DownDemoMain.dart';
 import 'flutterSearch/searchbarview.dart';
+import 'implicitAnimation/AnimatedContainerDemo.dart';
+import 'implicitAnimation/FadeInDemo.dart';
 import 'navigationrail/NavigationRailMain.dart';
 import 'nestedScrollView/DemoOne.dart';
 
@@ -203,27 +205,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-          FlatButton(
-            color: Colors.blue,
-            highlightColor: Colors.blue[700],
-            colorBrightness: Brightness.dark,
-            splashColor: Colors.grey,
-            child: Text("Flutter AnimatedSwitcher Demo "),
-            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-            onPressed: () {
-              //导航到新路由
-              Navigator.push( context,
-                  new MaterialPageRoute(builder: (context) {
-                    return new Scaffold(body: AnimatedSwitcherCounterRoute(),);
-                    //return new NestedScrollViewDemoTwo();
-                  }));
-              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
-
-            },
-
-          ),
-
-
 
           FlatButton(
             color: Colors.blue,
@@ -401,6 +382,68 @@ class _MyHomePageState extends State<MyHomePage> {
                     //return new NestedScrollViewDemoTwo();
                   }));
             },
+          ),
+
+
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("FadeInDemo "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: FadeInDemo(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+            },
+          ),
+
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("AnimatedContainerDemo "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: AnimatedContainerDemo(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+            },
+          ),
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Flutter AnimatedSwitcher Demo "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: AnimatedSwitcherCounterRoute(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
+
+            },
+
           ),
 
 

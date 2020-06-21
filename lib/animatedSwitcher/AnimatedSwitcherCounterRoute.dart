@@ -23,7 +23,7 @@ class _AnimatedSwitcherCounterRouteState extends State<AnimatedSwitcherCounterRo
             transitionBuilder: (Widget child, Animation<double> animation) {
 
               ///缩放动画
-             // return ScaleTransition(child: child, scale: animation);
+            //  return ScaleTransition(child: child, scale: animation);
 
               ///上下左右平移动画
               return SlideTransitionX(

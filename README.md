@@ -25,3 +25,7 @@
 [13、Flutter 使用 Github 进行 CI/CD](https://juejin.im/post/5ebfaeac6fb9a0435a01e241)
 
 [14、Flutter NavigationRail  Demo](https://juejin.im/post/5ed10da66fb9a0479a800c5e)
+
+
+[15、Flutter 隐式动画](https://juejin.im/post/5eecc7baf265da028e749f47)
+
