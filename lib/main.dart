@@ -443,10 +443,9 @@ class _MyHomePageState extends State<MyHomePage> {
               //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
 
             },
-
           ),
 
-
+          Opacity()
 
 
         ]
