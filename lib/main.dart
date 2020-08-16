@@ -17,6 +17,8 @@ import 'autocomplete/OverlayMain.dart';
 import 'chartsDisplay/ChartDispalyMain.dart';
 import 'downloadDemo/DownDemoMain.dart';
 import 'flutterSearch/searchbarview.dart';
+import 'heroAnimation/HeroAnimPage.dart';
+import 'heroAnimation/RadialExpansionDemo.dart';
 import 'implicitAnimation/AnimatedContainerDemo.dart';
 import 'implicitAnimation/FadeInDemo.dart';
 import 'navigationrail/NavigationRailMain.dart';
@@ -445,7 +447,50 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
 
-          Opacity()
+
+
+
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Hero 动画 "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: Heroanimpage(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
+
+            },
+          ),
+
+
+          FlatButton(
+            color: Colors.blue,
+            highlightColor: Colors.blue[700],
+            colorBrightness: Brightness.dark,
+            splashColor: Colors.grey,
+            child: Text("Hero 径向动画 "),
+            shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+            onPressed: () {
+              //导航到新路由
+              Navigator.push( context,
+                  new MaterialPageRoute(builder: (context) {
+                    return new Scaffold(body: RadialExpansionDemo(),);
+                    //return new NestedScrollViewDemoTwo();
+                  }));
+              //   Navigator.pushNamed(context, "new_page"); 通过路由表来导航路由
+
+            },
+          ),
+
 
 
         ]
