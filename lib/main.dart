@@ -1,14 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_share/path/PathAdvancedMain.dart';
 import 'package:flutter_share/path/PathBasicsMain.dart';
 import 'package:flutter_share/perspective/FlipAnimationMain.dart';
 import 'package:flutter_share/perspective/PerspectiveMain.dart';
 import 'package:flutter_share/refreshData/refresh_data.dart';
+import 'package:flutter_share/scheme/router.dart';
 import 'package:flutter_share/stateManager/models/cart.dart';
 import 'package:flutter_share/stateManager/models/catalog.dart';
 import 'package:flutter_share/stateManager/screens/cart.dart';
 import 'package:flutter_share/stateManager/screens/catalog.dart';
 import 'package:provider/provider.dart';
+import 'package:uni_links/uni_links.dart';
 
 import 'FutureBuilderProblem/FutureBuilderMain.dart';
 import 'animatedIcon/AnimatedIconPage.dart';
@@ -61,10 +66,14 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         initialRoute: '/',
-        routes: {
-          '/catalog': (context) => MyCatalog(),    ///类别
-          '/cart': (context) => MyCart(),
-        },
+        // routes: {
+        //   '/catalog': (context) => MyCatalog(),    ///类别
+        //   '/cart': (context) => MyCart(),
+        // },
+        routes: MyRouter().registerRouter(),
+
+
+
         home: MyHomePage(title: 'Flutter Demo Home Page'),
       ),
     );
@@ -76,6 +85,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
+
+
+
+/// eum 类型
+enum UniLinksType {
+  /// string link
+  string,
+}
+
+
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -86,6 +108,54 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+
+  UniLinksType _type = UniLinksType.string;
+  StreamSubscription _sub;
+  MyRouter router = MyRouter();
+
+  @override
+  void initState() {
+    super.initState();
+    //  scheme初始化，保证有上下文，需要跳转页面
+    initPlatformState();
+  }
+
+
+  ///  初始化Scheme只使用了String类型的路由跳转
+  ///  所以只有一个有需求可以使用[initPlatformStateForUriUniLinks]
+  Future<void> initPlatformState() async {
+    if (_type == UniLinksType.string) {
+      await initPlatformStateForStringUniLinks();
+    }
+  }
+
+  /// 使用[String]链接实现
+  Future<void> initPlatformStateForStringUniLinks() async {
+    String initialLink;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      initialLink = await getInitialLink();
+      if (initialLink != null) {
+        //  跳转到指定页面
+        router.push(context, initialLink);
+      }
+    } on PlatformException {
+      initialLink = 'Failed to get initial link.';
+    } on FormatException {
+      initialLink = 'Failed to parse the initial link as Uri.';
+    }
+    // Attach a listener to the links stream
+    _sub = getLinksStream().listen((String link) {
+      if (!mounted || link == null) return;
+      //  跳转到指定页面
+      router.push(context, link);
+    }, onError: (Object err) {
+      if (!mounted) return;
+    });
+  }
+
+
 
 
   @override
